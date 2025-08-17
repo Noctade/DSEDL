@@ -6,7 +6,7 @@ DSEDL - Discord Stickers &amp; Emoji Downloader
 - Download Emojis from Discord
 
 ## How to download & run?
-- Open the [Releases](https://github.com/Noctade/DSEDL/releases) tab, navigate to Assets and select the DSEDL-<VERSION>.zip file.
+- Open the [Releases](https://github.com/Noctade/DSEDL/releases) tab, navigate to Assets and select the DSEDL.zip file.
 - Extract the .zip file wherever you wish
 - Open the extracted directory
 - Launch DSEDL.exe
