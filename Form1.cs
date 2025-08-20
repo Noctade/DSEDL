@@ -13,7 +13,7 @@ namespace DSEDL
 
         private void DefaultWindow_Load(object sender, EventArgs e)
         {
-            textBox2.Text = locationBrowse.SelectedPath;
+            textBox2.Text = null;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -26,6 +26,15 @@ namespace DSEDL
         {
             string id = textBox1.Text;
             string folder = textBox2.Text;
+            if (string.IsNullOrEmpty(folder))
+            {
+                if (locationBrowse.ShowDialog() == DialogResult.OK)
+                {
+                    folder = locationBrowse.SelectedPath;
+                    textBox2.Text = folder;
+                }
+                
+            }
             string location = folder + "\\" + id + ".png";
             if (radioButton1.Checked)
             {
