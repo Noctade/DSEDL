@@ -13,30 +13,19 @@ namespace DSEDL
 
         private void DefaultWindow_Load(object sender, EventArgs e)
         {
-            textBox2.Text = null;
+            // clean the textBox for location
+            
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            locationBrowse.ShowDialog();
-            textBox2.Text = locationBrowse.SelectedPath;
-        }
 
         private async void button2_Click(object sender, EventArgs e)
         {
-            string id = textBox1.Text;
-            string folder = textBox2.Text;
-            if (string.IsNullOrEmpty(folder))
-            {
-                if (locationBrowse.ShowDialog() == DialogResult.OK)
-                {
-                    folder = locationBrowse.SelectedPath;
-                    textBox2.Text = folder;
-                }
-                
-            }
+            
+            string id = textBox1.Text; // get the id of the emoji / sticker 
+            locationBrowse.ShowDialog();
+            string folder = locationBrowse.SelectedPath;
             string location = folder + "\\" + id + ".png";
-            if (radioButton1.Checked)
+            if (radioButton1.Checked) // emoji download
             {
                 string link = "https://cdn.discordapp.com/emojis/" + id + ".png";
                 using (HttpClient client = new HttpClient())
@@ -52,7 +41,7 @@ namespace DSEDL
                     }
                 }
             }
-            if (radioButton2.Checked)
+            if (radioButton2.Checked) // sticker download
             {
                 string link = "https://cdn.discordapp.com/stickers/" + id + ".png";
                 using (HttpClient client = new HttpClient())
